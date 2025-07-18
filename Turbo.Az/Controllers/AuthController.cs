@@ -1,11 +1,11 @@
-﻿using JWTAuth.Business.AuthService.Interface;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.IdentityModel.Tokens.Jwt;
 using Newtonsoft;
 using Newtonsoft.Json;
 using EntityLayer.DTOs.UserDtos;
 using EntityLayer.Tables;
+using BusinessLayer.Abstract;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 

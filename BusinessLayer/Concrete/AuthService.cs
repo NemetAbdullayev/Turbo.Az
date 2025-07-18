@@ -1,20 +1,17 @@
-﻿using JWTAuth.Business.AuthService.Interface;
+﻿using AutoMapper;
+using BusinessLayer.Abstract;
+using DataAccessLayer;
+using EntityLayer.DTOs.UserDtos;
+using EntityLayer.Tables;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using JWTAuth.Business;
 
-namespace JWTAuth.Business.AuthService.Implementation
+namespace BusinessLayer.Concrete
 {
-    using AutoMapper;
-    using BCrypt.Net;
-    using DataAccessLayer;
-    using EntityLayer.DTOs.UserDtos;
-    using EntityLayer.Tables;
-    using Microsoft.AspNetCore.Mvc;
-    using Microsoft.EntityFrameworkCore;
-
     public class AuthService : IAuthService
     {
         private readonly ApplicationDbContext _dbContext;
@@ -32,7 +29,7 @@ namespace JWTAuth.Business.AuthService.Implementation
             User? user = await _dbContext.Users.FirstOrDefaultAsync(x=>x.UserName== userName);
             UserList userList=new UserList();
             _mapper.Map(user, userList);
-            if (user == null || BCrypt.Verify(password, user.Password) == false)
+            if (user == null || BCrypt.Net.BCrypt.Verify(password, user.Password) == false)
             {
                 return null; 
             }
@@ -67,7 +64,7 @@ namespace JWTAuth.Business.AuthService.Implementation
         {
             try
             {
-                user.Password = BCrypt.HashPassword(user.Password);
+                user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
                 _dbContext.Users.Add(user);
                 await _dbContext.SaveChangesAsync();
             }

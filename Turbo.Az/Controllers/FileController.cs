@@ -1,7 +1,5 @@
 ﻿using AutoMapper;
 using BusinessLayer.Abstract;
-using BusinessLayer.AuthService.Implementation;
-using BusinessLayer.AuthService.Interface;
 using DataAccessLayer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;

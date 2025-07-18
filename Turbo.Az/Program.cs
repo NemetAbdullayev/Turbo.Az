@@ -1,15 +1,11 @@
 using AutoMapper;
 using BusinessLayer.Abstract;
-using BusinessLayer.AuthService.Implementation;
-using BusinessLayer.AuthService.Interface;
 using BusinessLayer.Concrete;
 using BusinessLayer.Mapper;
 using DataAccessLayer;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete.EntityFramework;
 using EntityLayer.Tables;
-using JWTAuth.Business.AuthService.Implementation;
-using JWTAuth.Business.AuthService.Interface;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;

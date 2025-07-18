@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLayer.AuthService.Interface
+namespace BusinessLayer.Abstract
 {
     public interface IFileService
     {

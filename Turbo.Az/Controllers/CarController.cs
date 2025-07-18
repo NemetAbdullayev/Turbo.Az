@@ -1,8 +1,5 @@
 ﻿using AutoMapper;
 using BusinessLayer.Abstract;
-using BusinessLayer.AuthService.Implementation;
-using BusinessLayer.AuthService.Interface;
-using BusinessLayer.Concrete;
 using DataAccessLayer;
 using EntityLayer.DTOs.CarDTOs;
 using EntityLayer.Tables;

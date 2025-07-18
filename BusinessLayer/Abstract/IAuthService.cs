@@ -1,7 +1,7 @@
 ﻿using EntityLayer.DTOs.UserDtos;
 using EntityLayer.Tables;
 
-namespace JWTAuth.Business.AuthService.Interface
+namespace BusinessLayer.Abstract
 {
     public interface IAuthService
     {
